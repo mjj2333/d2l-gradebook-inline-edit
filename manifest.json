@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "D2L Gradebook Inline Edit",
+  "version": "8.13",
+  "description": "Double-click to inline-edit grades in the D2L Standard Gradebook view. Supports fraction grades, Final Adjusted Grades, and batch saving via RPC.",
+  "author": "David",
+
+  "icons": {
+    "16":  "icons/icon16.png",
+    "48":  "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": [],
+
+  "host_permissions": [
+    "*://sd63.onlinelearningbc.com/*"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://sd63.onlinelearningbc.com/d2l/lms/grades/admin/enter/user_list_view.d2l*"
+      ],
+      "js": ["content/main.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
